@@ -24,12 +24,31 @@ mail de contacto: contacto@gamerev.com.ar
 * Unity: Selewi
 * Arte: ????
 * Música y sonido: ????
-* Game design: ????
-* UI design: ????
+* Game design & UI: ????
+
+### Miembros por departamento:
+
+* Programación:
+* Arte:
+* Música:
+* Sonido:
+* Game design & UI:
 
 ### Detalles del proyecto:
 
-* Nombre del proyecto:
+* Nombre del proyecto: GR-GD-#1
 * Género:
 * Sinopsis:
-* Licencia:
+* Licencia: MIT
+
+## Requisitos para participar:
+
+1. Tener experiencia comprobable en haber trabajado con **Unity** o **Godot** y diferentes tipos de juegos (podés mostrar tus juegos de itch, por ejemplo. No buscamos pro!) *[excluyente]*
+2. Saber usar GIT (mínimamente saber hacer PUSH y PULL) *[excluyente]*
+3. Saber utilizar buenas prácticas de programación (SOLID, DRY, patrones de diseño, etc...) *[no excluyente]*
+
+## Condiciones:
+
+1. **Respetar a los lead y admins**. Cada uno está asignado para supervisar su área y tiene la última palabra sobre cada aspecto de ella.
+2. **Respetar las convenciones** para [Godot](https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_styleguide.html) y [Unity](https://wiki.unity3d.com/index.php/Csharp_Coding_Guidelines).
+3. **Comprometerse con las tareas y deadlines**. En caso de no poder cumplir un objetivo, dar aviso al lead para reasignarlo o decidir como proceder.
