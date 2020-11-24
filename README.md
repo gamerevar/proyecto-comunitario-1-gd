@@ -14,7 +14,9 @@ Teniendo en cuenta que es la primera vez que se realiza algo de este tipo en la 
 ### Link de interés:
 
 [Codecks.io](https://gamerev.codecks.io)
+
 [Discord](https://discord.gg/KrtbfaQ)
+
 mail de contacto: contacto@gamerev.com.ar
 
 ### Responsables por departamento:
