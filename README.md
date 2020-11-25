@@ -39,8 +39,7 @@ mail de contacto: contacto@gamerev.com.ar
 ### Detalles del proyecto:
 
 * Nombre del proyecto: GR-GD-#1
-* Género:
-* Sinopsis:
+* Version del engine: Godot 3.2.3
 * Licencia: MIT
 
 ## Requisitos para participar:
