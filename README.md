@@ -1,5 +1,5 @@
 
-[![Community Logo](https://gamerev.com.ar/assets/COM-PROJECT.png?v2)](https://gamerev.com.ar/)
+[![Community Logo](https://i.ibb.co/r4BqnSk/Comunidad-Proyecto.jpg)](https://gamerev.com.ar/)
 
 # Proyecto comunitario #1 (Godot)
 
