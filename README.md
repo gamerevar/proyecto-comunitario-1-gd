@@ -13,6 +13,8 @@ Teniendo en cuenta que es la primera vez que se realiza algo de este tipo en la 
 
 ### Link de interés:
 
+[Documentación](https://gamerevar.github.io/proyecto-comunitario-1-gd)
+
 [Codecks.io](https://gamerev.codecks.io)
 
 [Discord](https://discord.gg/KrtbfaQ)
