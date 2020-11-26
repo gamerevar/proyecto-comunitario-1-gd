@@ -1,16 +1,15 @@
-> Player.gd
+# Player.gd
 
 ### Fields
 
-health : float
-direction : Vector2
-speed : Vector2
-Velocity : Vector2
+* health : float
+* direction : Vector2
+* speed : Vector2
+* velocity : Vector2
 
 ### Methods
 
-```python
-
+```gdscript
 func move() -> void
 func jump() -> void
 func get_data(data) -> Json
