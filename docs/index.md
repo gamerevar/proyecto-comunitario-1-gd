@@ -1,2 +1,0 @@
-
-* [Player](/player.md)
