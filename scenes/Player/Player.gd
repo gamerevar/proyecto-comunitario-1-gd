@@ -1,4 +1,4 @@
 extends Node2D
 
 func _ready() -> void:
-	print("estoy lisqdsdasad")
+	print("estoy listo")
