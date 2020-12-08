@@ -1,3 +1,6 @@
 *.import*
 *.tres
 *.godot
+*.md5
+*.import
+*.godot
