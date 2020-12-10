@@ -1,0 +1,1 @@
+Ubicar en esta carpeta todos los nodos que estan en Autoload y que se puedan acceder desde cualquier parte del proyecto.
