@@ -14,7 +14,7 @@ Teniendo en cuenta que es la primera vez que se realiza algo de este tipo en la 
 ### Link de interés:
 
 - [Repositorio en GitHub](https://github.com/gamerevar/proyecto-comunitario-1-gd)
-- [Deck de Codecks](https://open.codecks.io/proyecto-comunitario-1-godot)
+- [Deck de Codecks](https://open.codecks.io/proyecto-comunitario-1-gd)
 - [Discord de la comunidad](https://discord.gg/KrtbfaQ)
 - [Miembros del proyecto](https://docs.google.com/spreadsheets/d/1DhZhN6iZDDRddVoGphDYP_qhdfA52QU_fwbsFlc0snk/edit?usp=sharing)
 
