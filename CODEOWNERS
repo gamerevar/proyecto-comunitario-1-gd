@@ -1,8 +1,14 @@
 * @gamerevar
 
-Main.tscn @gamerev
-Main.gd @gamerev
+default_env.tres @azagaya
+project.godot @azagaya
+Main.tscn @azagaya
+Main.gd @azagaya
 
-globals/* @jh62
-resources/* @jh62
-scenes/* @jh62
+assets/* @azagaya
+globals/* @azagaya
+resources/* @azagaya
+scenes/* @azagaya
+
+assets/audio/* @AlcidezSounds
+assets/graphics/* @azagaya
