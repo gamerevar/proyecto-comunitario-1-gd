@@ -37,7 +37,7 @@ mail de contacto: <contacto@gamerev.com.ar>
 ## Requisitos para participar:
 
 1. Tener usuario de _Discord_ en el servidor de [GameRev](https://discord.gg/KrtbfaQ).
-2. Solicitar los accesos y roles mediante el siguiente [formulario](https://forms.gle/ZakFZVZcVv1GZAQP8).
+2. Solicitar los accesos y roles mediante el siguiente formulario: convocatoria cerrada momentáneamente.
 
 ## Condiciones:
 
