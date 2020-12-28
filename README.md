@@ -23,6 +23,7 @@ mail de contacto: <contacto@gamerev.com.ar>
 ### Responsables por departamento:
 
 * Project managers: Paul & Federico Iribarren
+* Codecks: Paul & Azagaya
 * Godot: Azagaya
 * Arte: ignacio_otu
 * Audio: Alcidez
