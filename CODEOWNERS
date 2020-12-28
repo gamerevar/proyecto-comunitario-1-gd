@@ -1,14 +1,23 @@
-* @gamerevar
+* @gamerevar @azagaya
 
-default_env.tres @azagaya
-project.godot @azagaya
-Main.tscn @azagaya
-Main.gd @azagaya
+#default_env.tres @azagaya
+#project.godot @azagaya
+#Main.tscn @azagaya
+#Main.gd @azagaya
 
-assets/* @azagaya
-globals/* @azagaya
-resources/* @azagaya
-scenes/* @azagaya
+#assets/* @azagaya
+#globals/* @azagaya
+#resources/* @azagaya
+#scenes/* @azagaya
 
-assets/audio/* @AlcidezSounds
-assets/graphics/* @Ecoabismo
+#assets/audio/* @AlcidezSounds
+#assets/graphics/* @Ecoabismo
+
+*.mp3 @AlcidezSounds
+*.wav @AlcidezSounds
+*.ogg @AlcidezSounds
+
+*.png @Ecoabismo
+*.jpeg @Ecoabismo
+*.jpg @Ecoabismo
+*.bmp @Ecoabismo
