@@ -1,11 +1,13 @@
 ---
 name: Codecks
-about: Sugerí un cambio o algo para añadir a Codecks
+about: Sugerí una tarea nueva
 title: Nueva entrada! [Codecks]
 labels: request
 assignees: azagaya, gamerevar
 
 ---
+
+**Deck**
 
 **Título de la tarjeta**
 
