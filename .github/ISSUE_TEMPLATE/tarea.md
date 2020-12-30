@@ -1,6 +1,6 @@
 ---
 name: Tarea
-about: Sugerí una tarea nueva a publicar en Codecks
+about: Sugerí una tarea nueva para un área determinada. No olvides utilizar la label correcta!
 title: Nueva tarea! [Tarea]
 labels: ''
 assignees: azagaya, gamerevar
