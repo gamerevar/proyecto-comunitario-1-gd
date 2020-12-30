@@ -1,15 +1,10 @@
 ---
 name: Feature
-about: Agregar un feature al juego
+about: Sugerí un feature o idea para agregar al juego
 title: Título [FEATURE]
-labels: ''
+labels: request
 assignees: ''
 
 ---
 
-**Descripción del feature**
-
-**Razón del feature**
-
-**Implementación del feature**
-(completar si aplica)
+** Describí lo mejor posible el feature o idea a agregar al juego **
