@@ -1,16 +1,15 @@
 ---
 name: Tarea
-about: Sugerí una tarea nueva para un área determinada. No olvides utilizar la label correcta!
-title: Nueva tarea! [Tarea]
+about: Sugerí una tarea nueva para un área determinada. No olvides utilizar la label
+  correcta!
+title: Nueva tarea [Tarea]
 labels: ''
-assignees: azagaya, gamerevar
+assignees: ''
 
 ---
 
-**Deck**
+# Título
 
-**Título de la tarjeta**
+Texto
 
-**Descripción de la tarjeta**
-
-** Si estás actualizando una tarjeta, dejá el link.**
+### Referencias
