@@ -13,7 +13,6 @@ Teniendo en cuenta que es la primera vez que se realiza algo de este tipo en la 
 
 ### Link de interés:
 
-- [Repositorio en GitHub](https://github.com/gamerevar/proyecto-comunitario-1-gd)
 - [Deck de Codecks](https://open.codecks.io/proyecto-comunitario-1-gd)
 - [Repositorio de Gdrive](https://drive.google.com/drive/folders/1ia6nAGJ1ceT7ZJzAwzJVXEUT0EDOV67t?usp=sharing)
 - [Discord de la comunidad](https://discord.gg/KrtbfaQ)
