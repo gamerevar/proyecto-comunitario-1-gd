@@ -1,5 +1,7 @@
 * @gamerevar @azagaya
 
+CODEOWNERS @gamerevar
+
 #default_env.tres @azagaya
 #project.godot @azagaya
 #Main.tscn @azagaya
