@@ -3,13 +3,15 @@ name: Tarea
 about: Sugerí una tarea nueva para un área determinada. No olvides utilizar la label
   correcta!
 title: Nueva tarea [Tarea]
-labels: ''
+labels: new
 assignees: ''
 
 ---
 
 # Título
 
+## Descripción
+
 Texto
 
-### Referencias
+### Referencias o links

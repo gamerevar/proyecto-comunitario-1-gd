@@ -2,7 +2,7 @@
 name: Game Design Document
 about: Para solicitar y/o sugerir cambios especificamente del GDD.
 title: Nueva entrada! [GDD]
-labels: request
+labels: request, new
 assignees: azagaya, gamerevar
 
 ---
