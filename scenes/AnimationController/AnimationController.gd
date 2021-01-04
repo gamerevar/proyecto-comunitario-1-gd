@@ -1,12 +1,12 @@
 extends Sprite
 
-onready var _animationTree: AnimationTree = $AnimationTree
-onready var _animationState: AnimationNodeStateMachinePlayback = _animationTree.get("parameters/playback")
+onready var _animation_tree := $AnimationTree
+onready var _animation_state : AnimationNodeStateMachinePlayback = _animation_tree.get("parameters/playback")
 
 func play_animation(name: String, direction: Vector2) -> void:
 	if direction == Vector2.ZERO:
-		_animationState.travel("Idle")
+		_animation_state.travel("Idle")
 	else:
-		_animationTree.set("parameters/Idle/blend_position", direction)
-		_animationTree.set("parameters/Walk/blend_position", direction)
-		_animationState.travel("Walk")
+		_animation_tree.set("parameters/Idle/blend_position", direction)
+		_animation_tree.set("parameters/Walk/blend_position", direction)
+		_animation_state.travel("Walk")
