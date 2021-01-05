@@ -43,6 +43,6 @@ mail de contacto: <contacto@gamerev.com.ar>
 ## Condiciones:
 
 1. **Respetar a los lead y admins**. Cada uno está asignado para supervisar su área y tiene la última palabra sobre cada aspecto de ella.
-2. **Respetar las convenciones** para [Godot](https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_styleguide.html).
+2. **Respetar las convenciones** para [Godot de GDQuest](https://www.gdquest.com/docs/guidelines/best-practices/godot-gdscript/).
 
 ## Continuá leyendo la [Wiki](https://github.com/gamerevar/proyecto-comunitario-1-gd/wiki) para saber más.

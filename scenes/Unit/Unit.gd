@@ -9,7 +9,7 @@ export var min_damage: int
 export var max_damage: int 
 
 #Experimental location
-onready var camino := PoolVector2Array()
+onready var way := PoolVector2Array()
 
 func _move(coords: PoolVector2Array, delta) -> void:
 		# Calculate the movement distance for this frame
@@ -25,12 +25,10 @@ func _move(coords: PoolVector2Array, delta) -> void:
 			# The player get to the next point
 			position = coords[0]
 			coords.remove(0)
-		# Update the distance to walk
 		distance_to_walk -= distance_to_next_point
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	camino.append(Vector2(270, 119))
+	way.append(Vector2(270, 119))
 
 func _process(delta) -> void:
-	_move(camino, delta)
+	_move(way, delta)
