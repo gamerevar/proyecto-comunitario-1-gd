@@ -357,12 +357,12 @@ blend_mode = 1
 [sub_resource type="AnimationNodeStateMachineTransition" id=36]
 
 [sub_resource type="AnimationNodeStateMachine" id=37]
-states/Idle/node = SubResource( 25 )
-states/Idle/position = Vector2( 238, 115 )
-states/Walk/node = SubResource( 34 )
-states/Walk/position = Vector2( 564, 115 )
-transitions = [ "Idle", "Walk", SubResource( 35 ), "Walk", "Idle", SubResource( 36 ) ]
-start_node = "Idle"
+states/idle/node = SubResource( 25 )
+states/idle/position = Vector2( 238, 115 )
+states/walk/node = SubResource( 34 )
+states/walk/position = Vector2( 564, 115 )
+transitions = [ "idle", "walk", SubResource( 35 ), "walk", "idle", SubResource( 36 ) ]
+start_node = "idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=38]
 
@@ -370,7 +370,7 @@ start_node = "Idle"
 texture = ExtResource( 2 )
 vframes = 10
 hframes = 10
-frame = 20
+frame = 29
 script = ExtResource( 1 )
 
 [node name="Animation" type="AnimationPlayer" parent="."]
@@ -396,5 +396,5 @@ tree_root = SubResource( 37 )
 anim_player = NodePath("../Animation")
 active = true
 parameters/playback = SubResource( 38 )
-parameters/Idle/blend_position = Vector2( -0.0626118, 0.0517242 )
-parameters/Walk/blend_position = Vector2( -0.992844, -0.0258621 )
+parameters/idle/blend_position = Vector2( 0, 0 )
+parameters/walk/blend_position = Vector2( 0, 0 )
