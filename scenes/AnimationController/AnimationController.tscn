@@ -1,7 +1,8 @@
 [gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://scenes/AnimationController/AnimationController.gd" type="Script" id=1]
-[ext_resource path="res://assets/graphics/isometric_demo_red.png" type="Texture" id=2]
+[ext_resource path="res://scenes/AnimationControllerTest/isometric_demo_red.png" type="Texture" id=2]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "attack-E"

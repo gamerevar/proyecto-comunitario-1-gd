@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/isometric_demo_green.png-0fb1c5a28463e519d005143633c85fb7.stex"
+path="res://.import/isometric_demo_blue.png-ba6c65b9d1cad0f7e86876d7ced17845.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/isometric_demo_green.png"
-dest_files=[ "res://.import/isometric_demo_green.png-0fb1c5a28463e519d005143633c85fb7.stex" ]
+source_file="res://scenes/AnimationControllerTest/isometric_demo_blue.png"
+dest_files=[ "res://.import/isometric_demo_blue.png-ba6c65b9d1cad0f7e86876d7ced17845.stex" ]
 
 [params]
 
