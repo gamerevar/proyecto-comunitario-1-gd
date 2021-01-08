@@ -7,7 +7,7 @@ var selected = false
 func get_max_movement():
 	return max_movement
 
-func move(path):
+func _update_way(path):
 	for point in path:
 		$"Tween".interpolate_property($".", "global_position", position, point, 0.5, Tween.TRANS_LINEAR)
 		$"Tween".start()

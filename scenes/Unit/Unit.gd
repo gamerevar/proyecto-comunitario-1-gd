@@ -9,7 +9,7 @@ export var min_damage: int
 export var max_damage: int 
 
 #Experimental location
-onready var way := PoolVector2Array()
+onready var way : PoolVector2Array
 
 func _move(coords: PoolVector2Array, delta) -> void:
 		# Calculate the movement distance for this frame
@@ -28,7 +28,15 @@ func _move(coords: PoolVector2Array, delta) -> void:
 		distance_to_walk -= distance_to_next_point
 
 func _ready() -> void:
-	way.append(Vector2(270, 119))
+	pass
 
 func _process(delta) -> void:
 	_move(way, delta)
+
+#functions for testing Cursors.
+func select():
+	$Sprite.modulate = Color(0.972549, 0.105882, 0.105882)
+
+func _update_way(path : PoolVector2Array):
+	for point in path:
+		way.append(point)
