@@ -15,11 +15,11 @@ CODEOWNERS @gamerevar
 #assets/audio/* @AlcidezSounds
 #assets/graphics/* @Ecoabismo
 
-*.mp3 @AlcidezSounds
-*.wav @AlcidezSounds
-*.ogg @AlcidezSounds
+#*.mp3 @AlcidezSounds
+#*.wav @AlcidezSounds
+#*.ogg @AlcidezSounds
 
-*.png @Ecoabismo
-*.jpeg @Ecoabismo
-*.jpg @Ecoabismo
-*.bmp @Ecoabismo
+#*.png @Ecoabismo
+#*.jpeg @Ecoabismo
+#*.jpg @Ecoabismo
+#*.bmp @Ecoabismo
