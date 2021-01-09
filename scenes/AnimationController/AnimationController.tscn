@@ -1,8 +1,6 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://scenes/AnimationController/AnimationController.gd" type="Script" id=1]
-[ext_resource path="res://scenes/AnimationControllerTest/isometric_demo_red.png" type="Texture" id=2]
-
 
 [sub_resource type="Animation" id=1]
 resource_name = "attack-E"
@@ -524,72 +522,29 @@ tracks/0/keys = {
 "values": [ 70, 71, 72, 73, 74, 75, 76, 77, 78, 79 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=64]
+[sub_resource type="AnimationNodeAnimation" id=33]
 animation = "attack-SW"
 
-[sub_resource type="AnimationNodeAnimation" id=65]
+[sub_resource type="AnimationNodeAnimation" id=34]
 animation = "attack-S"
 
-[sub_resource type="AnimationNodeAnimation" id=66]
+[sub_resource type="AnimationNodeAnimation" id=35]
 animation = "attack-SE"
 
-[sub_resource type="AnimationNodeAnimation" id=67]
+[sub_resource type="AnimationNodeAnimation" id=36]
 animation = "attack-E"
 
-[sub_resource type="AnimationNodeAnimation" id=68]
+[sub_resource type="AnimationNodeAnimation" id=37]
 animation = "attack-NE"
 
-[sub_resource type="AnimationNodeAnimation" id=69]
+[sub_resource type="AnimationNodeAnimation" id=38]
 animation = "attack-N"
 
-[sub_resource type="AnimationNodeAnimation" id=70]
+[sub_resource type="AnimationNodeAnimation" id=39]
 animation = "attack-NW"
 
-[sub_resource type="AnimationNodeAnimation" id=71]
-animation = "attack-W"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id=72]
-blend_point_0/node = SubResource( 64 )
-blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 65 )
-blend_point_1/pos = Vector2( -1, 1 )
-blend_point_2/node = SubResource( 66 )
-blend_point_2/pos = Vector2( 0, 1 )
-blend_point_3/node = SubResource( 67 )
-blend_point_3/pos = Vector2( 1, 1 )
-blend_point_4/node = SubResource( 68 )
-blend_point_4/pos = Vector2( 1, 0 )
-blend_point_5/node = SubResource( 69 )
-blend_point_5/pos = Vector2( 1, -1 )
-blend_point_6/node = SubResource( 70 )
-blend_point_6/pos = Vector2( 0, -1 )
-blend_point_7/node = SubResource( 71 )
-blend_point_7/pos = Vector2( -1, -1 )
-blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id=33]
-animation = "death-SW"
-
-[sub_resource type="AnimationNodeAnimation" id=34]
-animation = "death-S"
-
-[sub_resource type="AnimationNodeAnimation" id=35]
-animation = "death-SE"
-
-[sub_resource type="AnimationNodeAnimation" id=36]
-animation = "death-E"
-
-[sub_resource type="AnimationNodeAnimation" id=37]
-animation = "death-NE"
-
-[sub_resource type="AnimationNodeAnimation" id=38]
-animation = "death-N"
-
-[sub_resource type="AnimationNodeAnimation" id=39]
-animation = "death-NW"
-
 [sub_resource type="AnimationNodeAnimation" id=40]
-animation = "death-W"
+animation = "attack-W"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=41]
 blend_point_0/node = SubResource( 33 )
@@ -611,28 +566,28 @@ blend_point_7/pos = Vector2( -1, -1 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=42]
-animation = "idle-SW"
+animation = "death-SW"
 
 [sub_resource type="AnimationNodeAnimation" id=43]
-animation = "idle-S"
+animation = "death-S"
 
 [sub_resource type="AnimationNodeAnimation" id=44]
-animation = "idle-SE"
+animation = "death-SE"
 
 [sub_resource type="AnimationNodeAnimation" id=45]
-animation = "idle-E"
+animation = "death-E"
 
 [sub_resource type="AnimationNodeAnimation" id=46]
-animation = "idle-NE"
+animation = "death-NE"
 
 [sub_resource type="AnimationNodeAnimation" id=47]
-animation = "idle-N"
+animation = "death-N"
 
 [sub_resource type="AnimationNodeAnimation" id=48]
-animation = "idle-NW"
+animation = "death-NW"
 
 [sub_resource type="AnimationNodeAnimation" id=49]
-animation = "idle-W"
+animation = "death-W"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=50]
 blend_point_0/node = SubResource( 42 )
@@ -654,28 +609,28 @@ blend_point_7/pos = Vector2( -1, -1 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=51]
-animation = "walk-SW"
+animation = "idle-SW"
 
 [sub_resource type="AnimationNodeAnimation" id=52]
-animation = "walk-S"
+animation = "idle-S"
 
 [sub_resource type="AnimationNodeAnimation" id=53]
-animation = "walk-SE"
+animation = "idle-SE"
 
 [sub_resource type="AnimationNodeAnimation" id=54]
-animation = "walk-E"
+animation = "idle-E"
 
 [sub_resource type="AnimationNodeAnimation" id=55]
-animation = "walk-NE"
+animation = "idle-NE"
 
 [sub_resource type="AnimationNodeAnimation" id=56]
-animation = "walk-N"
+animation = "idle-N"
 
 [sub_resource type="AnimationNodeAnimation" id=57]
-animation = "walk-NW"
+animation = "idle-NW"
 
 [sub_resource type="AnimationNodeAnimation" id=58]
-animation = "walk-W"
+animation = "idle-W"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=59]
 blend_point_0/node = SubResource( 51 )
@@ -696,9 +651,56 @@ blend_point_7/node = SubResource( 58 )
 blend_point_7/pos = Vector2( -1, -1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=60]
+[sub_resource type="AnimationNodeAnimation" id=60]
+animation = "walk-SW"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=61]
+[sub_resource type="AnimationNodeAnimation" id=61]
+animation = "walk-S"
+
+[sub_resource type="AnimationNodeAnimation" id=62]
+animation = "walk-SE"
+
+[sub_resource type="AnimationNodeAnimation" id=63]
+animation = "walk-E"
+
+[sub_resource type="AnimationNodeAnimation" id=64]
+animation = "walk-NE"
+
+[sub_resource type="AnimationNodeAnimation" id=65]
+animation = "walk-N"
+
+[sub_resource type="AnimationNodeAnimation" id=66]
+animation = "walk-NW"
+
+[sub_resource type="AnimationNodeAnimation" id=67]
+animation = "walk-W"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=68]
+blend_point_0/node = SubResource( 60 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 61 )
+blend_point_1/pos = Vector2( -1, 1 )
+blend_point_2/node = SubResource( 62 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 63 )
+blend_point_3/pos = Vector2( 1, 1 )
+blend_point_4/node = SubResource( 64 )
+blend_point_4/pos = Vector2( 1, 0 )
+blend_point_5/node = SubResource( 65 )
+blend_point_5/pos = Vector2( 1, -1 )
+blend_point_6/node = SubResource( 66 )
+blend_point_6/pos = Vector2( 0, -1 )
+blend_point_7/node = SubResource( 67 )
+blend_point_7/pos = Vector2( -1, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=69]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=70]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=71]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=72]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=73]
 
@@ -716,29 +718,24 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=80]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=81]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=82]
-
-[sub_resource type="AnimationNodeStateMachine" id=62]
-states/attack/node = SubResource( 72 )
+[sub_resource type="AnimationNodeStateMachine" id=81]
+states/attack/node = SubResource( 41 )
 states/attack/position = Vector2( 394, 33 )
-states/death/node = SubResource( 41 )
+states/death/node = SubResource( 50 )
 states/death/position = Vector2( 394, 215 )
-states/idle/node = SubResource( 50 )
+states/idle/node = SubResource( 59 )
 states/idle/position = Vector2( 238, 115 )
-states/walk/node = SubResource( 59 )
+states/walk/node = SubResource( 68 )
 states/walk/position = Vector2( 564, 115 )
-transitions = [ "idle", "walk", SubResource( 60 ), "walk", "idle", SubResource( 61 ), "idle", "attack", SubResource( 73 ), "attack", "idle", SubResource( 74 ), "attack", "walk", SubResource( 75 ), "walk", "attack", SubResource( 76 ), "attack", "death", SubResource( 77 ), "death", "attack", SubResource( 78 ), "idle", "death", SubResource( 79 ), "death", "idle", SubResource( 80 ), "death", "walk", SubResource( 81 ), "walk", "death", SubResource( 82 ) ]
+transitions = [ "idle", "walk", SubResource( 69 ), "walk", "idle", SubResource( 70 ), "idle", "attack", SubResource( 71 ), "attack", "idle", SubResource( 72 ), "attack", "walk", SubResource( 73 ), "walk", "attack", SubResource( 74 ), "attack", "death", SubResource( 75 ), "death", "attack", SubResource( 76 ), "idle", "death", SubResource( 77 ), "death", "idle", SubResource( 78 ), "death", "walk", SubResource( 79 ), "walk", "death", SubResource( 80 ) ]
 start_node = "attack"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=63]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=82]
 
 [node name="CharacterSprite" type="Sprite"]
-texture = ExtResource( 2 )
 vframes = 10
 hframes = 10
-frame = 21
+frame = 24
 script = ExtResource( 1 )
 
 [node name="Animation" type="AnimationPlayer" parent="."]
@@ -776,10 +773,10 @@ anims/walk-SW = SubResource( 31 )
 anims/walk-W = SubResource( 32 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 62 )
+tree_root = SubResource( 81 )
 anim_player = NodePath("../Animation")
 active = true
-parameters/playback = SubResource( 63 )
+parameters/playback = SubResource( 82 )
 parameters/attack/blend_position = Vector2( 0, 0 )
 parameters/death/blend_position = Vector2( 0.477639, -0.732759 )
 parameters/idle/blend_position = Vector2( 0, 0 )
