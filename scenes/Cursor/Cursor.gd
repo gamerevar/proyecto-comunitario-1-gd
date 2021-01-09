@@ -6,8 +6,6 @@ enum Mode {
 	UNIT_CANT_REACH
 }
 
-export var navigation_2d_node_path : NodePath
-
 var current_Mode = Mode.IDLE
 var current_tile : Vector2
 var current_unit : Area2D
@@ -16,7 +14,7 @@ var selected_unit : Area2D
 onready var mouse_container := $MouseContainer #containes everything that moves with the Cursor
 onready var Tile_container := $TileContainer #containes everything that moves depending the grid
 onready var tile_map := get_parent()
-onready var navigation_2d := get_node(navigation_2d_node_path)
+
 
 func _ready()-> void:
 	change_mode(Mode.IDLE)
@@ -67,10 +65,7 @@ func check_tile_state()-> void:
 func create_and_send_path(endpoint)-> void:
 	var start_point = selected_unit.global_position
 	endpoint = endpoint + Vector2(0, 8) #for setting it in the middle of the tile
-	
-	var path = navigation_2d.get_simple_path(start_point, endpoint)
-	
-	selected_unit._update_way(path)
+	selected_unit._update_way(2)#TODO
 
 func set_unit(unit: Area2D = null):
 	selected_unit = unit
