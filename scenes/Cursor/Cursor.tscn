@@ -16,6 +16,11 @@ z_index = 2
 texture = ExtResource( 2 )
 offset = Vector2( 0, 13 )
 
+[node name="NotWalkTileSprite" type="Sprite" parent="TileContainer"]
+modulate = Color( 0.87451, 0.0196078, 0.0196078, 1 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, 13 )
+
 [node name="MouseContainer" type="Node2D" parent="."]
 
 [node name="AllyArea" type="Area2D" parent="MouseContainer"]

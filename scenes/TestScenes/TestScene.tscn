@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/Unit/Unit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/TestScenes/CursorTest/TESTplayer.tscn" type="PackedScene" id=5]
 
-[sub_resource type="NavigationPolygon" id=3]
+[sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 30, 0, 0, 15, 30, 30, 60, 15 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 
@@ -39,7 +39,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
-2/navigation = SubResource( 3 )
+2/navigation = SubResource( 1 )
 2/shapes = [  ]
 2/z_index = 0
 
