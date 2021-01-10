@@ -6,42 +6,46 @@ enum Mode {
 	UNIT_CANT_REACH
 }
 
-var current_Mode = Mode.IDLE
+export var tile_map_hilight_node_path : NodePath
+
+var current_mode = Mode.IDLE
 var current_tile : Vector2
-var current_unit : Area2D
+var current_unit : Area2D #DELETE this is just for testing.
 var selected_unit : Area2D
+var valid_tiles : Array
 
 onready var mouse_container := $MouseContainer #containes everything that moves with the Cursor
 onready var Tile_container := $TileContainer #containes everything that moves depending the grid
-onready var tile_map := get_parent()
-
+onready var tile_map_a_star := get_parent()
+onready var tile_map_hilight := get_node(tile_map_hilight_node_path)
 
 func _ready()-> void:
 	change_mode(Mode.IDLE)
-	
 
 func _unhandled_input(event)-> void:
 	var mouse_position := get_global_mouse_position()
-	current_tile = tile_map.world_to_map(mouse_position)
+	current_tile = tile_map_a_star.world_to_map(mouse_position)
 	
 	mouse_container.global_position = mouse_position
-	Tile_container.global_position = tile_map.map_to_world(current_tile)
+	Tile_container.global_position = tile_map_a_star.map_to_world(current_tile)
 	
 	check_tile_state()
 	
 	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_RIGHT and current_Mode == Mode.UNIT_CAN_REACH:
-			create_and_send_path(tile_map.map_to_world(current_tile))
+		if event.button_index == BUTTON_RIGHT and current_mode == Mode.UNIT_CAN_REACH:
+			send_path(current_tile)
+			tile_map_hilight.clean_hilights()
 		
-		#DELETE when units are seleted from an other place
+		#DELETE this is just for testing.
 		if event.button_index == BUTTON_LEFT and current_unit != null:
 			set_unit(current_unit)
-		
+			valid_tiles = tile_map_a_star.get_reachable_tiles(tile_map_a_star.world_to_map(selected_unit.global_position), selected_unit.max_movement)
+			tile_map_hilight.set_reachable_hilights(valid_tiles)
 	
 
 func change_mode(mode := Mode.NONE)-> void:
-	current_Mode = mode
-	match current_Mode:
+	current_mode = mode
+	match current_mode:
 		Mode.IDLE:
 			$TileContainer/WalkTileSprite.visible = false
 			$TileContainer/NotWalkTileSprite.visible = false
@@ -55,27 +59,28 @@ func change_mode(mode := Mode.NONE)-> void:
 
 func check_tile_state()-> void:
 	if selected_unit == null:
-		return
+		change_mode(Mode.IDLE)
 	
-	if tile_map.get_cellv(current_tile) == 2:
+	if valid_tiles.has(current_tile):
 		change_mode(Mode.UNIT_CAN_REACH)
 	else:
 		change_mode(Mode.UNIT_CANT_REACH)
 
-func create_and_send_path(endpoint)-> void:
-	var start_point = selected_unit.global_position
-	endpoint = endpoint + Vector2(0, 8) #for setting it in the middle of the tile
-	selected_unit._update_way(2)#TODO
+func send_path(end_point)-> void:
+	var start_point = tile_map_a_star.world_to_map(selected_unit.global_position)
+	var path = tile_map_a_star.get_astar_path_in_wolrd(start_point, end_point)
+	selected_unit.move(path)
 
-func set_unit(unit: Area2D = null):
+func set_unit(unit: Area2D = null)-> void:
 	selected_unit = unit
-	selected_unit.select() #DELETE just for testing.
+	if selected_unit != null:
+		selected_unit.select() #DELETE this is just for testing.
+	
 
 #for storing wich unit the mouse is hovering.
-#DELETE when units are seleted from an other place
+#DELETE this is just for testing.
 func _on_AllyArea_area_entered(area)-> void:
 	current_unit = area
-
 
 func _on_AllyArea_area_exited(_area)-> void:
 	current_unit = null

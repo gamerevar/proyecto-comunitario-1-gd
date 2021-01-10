@@ -66,6 +66,7 @@ tile_data = PoolIntArray( -851951, 2, 0, -786415, 2, 0, -786414, 2, 0, -786413, 
 script = ExtResource( 6 )
 
 [node name="Cursor" parent="FloorContainer/TileMapFloor" instance=ExtResource( 2 )]
+tile_map_hilight_node_path = NodePath("../../TileMapFloorHilight")
 
 [node name="TileMapFloorHilight" type="TileMap" parent="FloorContainer"]
 mode = 1
