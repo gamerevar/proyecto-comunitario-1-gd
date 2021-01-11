@@ -2,7 +2,7 @@ extends TileMap
 
 #mayby we can make a dictionary with the tiles if we need to add more types
 
-func set_reachable_hilights(tiles_to_paint)-> void:
+func set_reachable_hilights(tiles_to_paint : Array)-> void:
 	for tile in tiles_to_paint:
 		set_cell(tile.x, tile.y, 0)
 

@@ -28,7 +28,7 @@ func connect_neighbors()-> void:
 			if walkable_tiles.has(n_or_s_neighbor) and walkable_tiles.has(e_or_w_neighbor):
 				a_star.connect_points(id(tile), id(tile + neighbor), false)
 
-func get_reachable_tiles(center_tile, max_range)-> Array:
+func get_reachable_tiles(center_tile : Vector2, max_range : int)-> Array:
 	
 	var in_range_tiles = []
 	var reachable_tiles = []
@@ -46,7 +46,7 @@ func get_reachable_tiles(center_tile, max_range)-> Array:
 	
 	return reachable_tiles
 
-func get_astar_path_in_wolrd(start_tile, end_tile)-> Array:
+func get_astar_path_in_wolrd(start_tile : Vector2 , end_tile : Vector2)-> Array:
 	var path = a_star.get_point_path(id(start_tile), id(end_tile))
 	var final_path = []
 	for point in path:
@@ -54,7 +54,7 @@ func get_astar_path_in_wolrd(start_tile, end_tile)-> Array:
 		final_path.append(point)
 	return final_path
 
-func id(tile)-> int:
+func id(tile : Vector2)-> int:
 	var a = tile.x
 	var b = tile.y
 	return ( (a+b) * (a+b+1) )/2 + b

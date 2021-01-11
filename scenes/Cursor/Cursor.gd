@@ -65,8 +65,9 @@ func check_tile_state()-> void:
 		change_mode(Mode.UNIT_CAN_REACH)
 	else:
 		change_mode(Mode.UNIT_CANT_REACH)
+	
 
-func send_path(end_point)-> void:
+func send_path(end_point : Vector2)-> void:
 	var start_point = tile_map_a_star.world_to_map(selected_unit.global_position)
 	var path = tile_map_a_star.get_astar_path_in_wolrd(start_point, end_point)
 	selected_unit.move(path)
