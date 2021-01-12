@@ -5,8 +5,16 @@ const DIAGONALS_NEIGHBORS := [Vector2(1, -1), Vector2(-1, 1), Vector2(1, 1), Vec
 
 onready var a_star = AStar2D.new()
 onready var walkable_tiles = get_used_cells()
+onready var min_x : int = walkable_tiles[0].x
+onready var min_y : int = walkable_tiles[0].y
 
 func _ready()-> void:
+	for tile in walkable_tiles:
+		if tile.x < min_x:
+			min_x = tile.x
+		if tile.y < min_y:
+			min_y = tile.y
+	
 	create_points()
 	connect_neighbors()
 
@@ -55,6 +63,6 @@ func get_astar_path_in_wolrd(start_tile : Vector2 , end_tile : Vector2)-> Array:
 	return final_path
 
 func id(tile : Vector2)-> int:
-	var a = tile.x
-	var b = tile.y
+	var a = tile.x - min_x
+	var b = tile.y - min_y
 	return ( (a+b) * (a+b+1) )/2 + b
