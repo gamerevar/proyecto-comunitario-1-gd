@@ -18,6 +18,8 @@ onready var mouse_container := $MouseContainer #containes everything that moves 
 onready var Tile_container := $TileContainer #containes everything that moves depending the grid
 onready var tile_map_a_star := get_parent()
 onready var tile_map_hilight := get_node(tile_map_hilight_node_path)
+onready var walkable_tile_sprite := $TileContainer/WalkTileSprite
+onready var not_walkable_tile_sprite := $TileContainer/NotWalkTileSprite
 
 func _ready()-> void:
 	change_mode(Mode.IDLE)
@@ -39,7 +41,8 @@ func _unhandled_input(event)-> void:
 		#DELETE this is just for testing.
 		if event.button_index == BUTTON_LEFT and current_unit != null:
 			set_unit(current_unit)
-			valid_tiles = tile_map_a_star.get_reachable_tiles(tile_map_a_star.world_to_map(selected_unit.global_position), selected_unit.max_movement)
+			var tile_position = tile_map_a_star.world_to_map(selected_unit.global_position)
+			valid_tiles = tile_map_a_star.get_reachable_tiles(tile_position, selected_unit.movement_range)
 			tile_map_hilight.set_reachable_hilights(valid_tiles)
 	
 
@@ -47,14 +50,14 @@ func change_mode(mode := Mode.NONE)-> void:
 	current_mode = mode
 	match current_mode:
 		Mode.IDLE:
-			$TileContainer/WalkTileSprite.visible = false
-			$TileContainer/NotWalkTileSprite.visible = false
+			walkable_tile_sprite.visible = false
+			not_walkable_tile_sprite.visible = false
 		Mode.UNIT_CAN_REACH:
-			$TileContainer/WalkTileSprite.visible = true
-			$TileContainer/NotWalkTileSprite.visible = false
+			walkable_tile_sprite.visible = true
+			not_walkable_tile_sprite.visible = false
 		Mode.UNIT_CANT_REACH:
-			$TileContainer/WalkTileSprite.visible = false
-			$TileContainer/NotWalkTileSprite.visible = true
+			walkable_tile_sprite.visible = false
+			not_walkable_tile_sprite.visible = true
 	
 
 func check_tile_state()-> void:

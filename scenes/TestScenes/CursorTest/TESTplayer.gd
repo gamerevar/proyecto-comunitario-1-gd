@@ -1,30 +1,38 @@
 class_name TestPlayer
 extends Area2D
 
-var max_movement = 4
-var selected = false
+export var movement_range : int = 4
+export var atack_range : int
+export var hit_points : int
+export var damage_min : int
+export var damage_max : int
 
-func get_max_movement():
-	return max_movement
+var speed := 100.0
+var selected := false
 
-func move(path):
+onready var soldier_sprite := $base_soldier
+onready var movement_tween := $"Tween"
+
+func move(path)-> void:
+	path.remove(0)
 	for point in path:
-		$"Tween".interpolate_property($".", "global_position", position, point, 0.3, Tween.TRANS_LINEAR)
-		$"Tween".start()
-		yield(get_tree().create_timer(0.3), "timeout")
+		var time := position.distance_to(point) / speed
+		movement_tween.interpolate_property($".", "global_position", position, point, time, Tween.TRANS_LINEAR)
+		movement_tween.start()
+		yield(movement_tween,"tween_all_completed")
 
-func select():
+func select()-> void:
 	selected = true
-	$base_soldier.modulate = Color(0.972549, 0.105882, 0.105882)
+	soldier_sprite.modulate = Color(0.972549, 0.105882, 0.105882)
 
-func unselect():
+func unselect()-> void:
 	selected = false
-	$base_soldier.modulate = Color(1, 1, 1)
+	soldier_sprite.modulate = Color(1, 1, 1)
 
-func _on_Player_mouse_entered():
+func _on_Player_mouse_entered()-> void:
 	if not selected:
-		$base_soldier.modulate = Color(0.545098, 0.968627, 0.376471)
+		soldier_sprite.modulate = Color(0.545098, 0.968627, 0.376471)
 
-func _on_Player_mouse_exited():
+func _on_Player_mouse_exited()-> void:
 	if not selected:
-		$base_soldier.modulate = Color(1, 1, 1)
+		soldier_sprite.modulate = Color(1, 1, 1)
