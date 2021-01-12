@@ -5,4 +5,9 @@
 [node name="Camera" type="Camera2D"]
 current = true
 script = ExtResource( 1 )
-correction_value = 0.5
+tolerance = 0.5
+speed = 500.0
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_anchor_reached"]
