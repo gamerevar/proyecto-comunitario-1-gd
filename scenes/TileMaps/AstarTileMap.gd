@@ -63,6 +63,6 @@ func get_astar_path_in_wolrd(start_tile : Vector2 , end_tile : Vector2)-> Array:
 	return final_path
 
 func get_tile_id(tile : Vector2)-> int:
-	var a = tile.x - min_x
-	var b = tile.y - min_y
+	var a : int = tile.x - min_x
+	var b : int = tile.y - min_y
 	return ( (a+b) * (a+b+1) )/2 + b
