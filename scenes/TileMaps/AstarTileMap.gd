@@ -5,8 +5,16 @@ const DIAGONALS_NEIGHBORS := [Vector2(1, -1), Vector2(-1, 1), Vector2(1, 1), Vec
 
 onready var a_star = AStar2D.new()
 onready var walkable_tiles = get_used_cells()
+onready var min_x : int = walkable_tiles[0].x
+onready var min_y : int = walkable_tiles[0].y
 
 func _ready()-> void:
+	for tile in walkable_tiles:
+		if tile.x < min_x:
+			min_x = tile.x
+		if tile.y < min_y:
+			min_y = tile.y
+	
 	create_points()
 	connect_neighbors()
 
@@ -18,14 +26,15 @@ func connect_neighbors()-> void:
 	for tile in walkable_tiles:
 		
 		for neighbor in PARALLEL_NEIGHBORS:
-			var neighbor_tile = tile + neighbor
+			var neighbor_tile : Vector2 = tile + neighbor
 			if walkable_tiles.has(neighbor_tile):
 				a_star.connect_points(get_tile_id(tile), get_tile_id(neighbor_tile),false)
 		
 		for neighbor in DIAGONALS_NEIGHBORS:
-			var n_or_s_neighbor = tile + Vector2(neighbor.x, 0)
-			var e_or_w_neighbor = tile + Vector2(0, neighbor.y)
-			if walkable_tiles.has(n_or_s_neighbor) and walkable_tiles.has(e_or_w_neighbor):
+			var n_or_s : Vector2 = tile + Vector2(neighbor.x, 0)
+			var e_or_w : Vector2 = tile + Vector2(0, neighbor.y)
+			var neighbor_tile : Vector2 = tile + neighbor
+			if n_or_s in walkable_tiles and e_or_w in walkable_tiles and neighbor_tile in walkable_tiles:
 				a_star.connect_points(get_tile_id(tile), get_tile_id(tile + neighbor), false)
 
 func get_reachable_tiles(center_tile : Vector2, max_range : int)-> Array:
@@ -55,6 +64,6 @@ func get_astar_path_in_wolrd(start_tile : Vector2 , end_tile : Vector2)-> Array:
 	return final_path
 
 func get_tile_id(tile : Vector2)-> int:
-	var a = tile.x
-	var b = tile.y
+	var a : int = tile.x - min_x
+	var b : int = tile.y - min_y
 	return ( (a+b) * (a+b+1) )/2 + b
