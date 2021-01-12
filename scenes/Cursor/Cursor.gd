@@ -8,14 +8,14 @@ enum Mode {
 
 export var tile_map_hilight_node_path : NodePath
 
-var current_mode = Mode.IDLE
+var current_mode : int = Mode.IDLE
 var current_tile : Vector2
 var current_unit : Area2D #DELETE this is just for testing.
 var selected_unit : Area2D
 var valid_tiles : Array
 
 onready var mouse_container := $MouseContainer #containes everything that moves with the Cursor
-onready var Tile_container := $TileContainer #containes everything that moves depending the grid
+onready var tile_container := $TileContainer #containes everything that moves depending the grid
 onready var tile_map_a_star := get_parent()
 onready var tile_map_hilight := get_node(tile_map_hilight_node_path)
 onready var walkable_tile_sprite := $TileContainer/WalkTileSprite
@@ -29,7 +29,7 @@ func _unhandled_input(event)-> void:
 	current_tile = tile_map_a_star.world_to_map(mouse_position)
 	
 	mouse_container.global_position = mouse_position
-	Tile_container.global_position = tile_map_a_star.map_to_world(current_tile)
+	tile_container.global_position = tile_map_a_star.map_to_world(current_tile)
 	
 	check_tile_state()
 	
