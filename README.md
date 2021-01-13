@@ -33,7 +33,8 @@ mail de contacto: <contacto@gamerev.com.ar>
 
 * Nombre del proyecto: proyecto-comunitario-1-gd
 * Version del engine: Godot 3.2.3
-* Licencia: MIT
+* Licencia de código: MIT
+* Licencia de arte: Attribution 4.0 International (CC BY 4.0)
 
 ## Requisitos para participar:
 
