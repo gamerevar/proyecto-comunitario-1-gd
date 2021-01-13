@@ -8,10 +8,8 @@ assignees: ''
 
 ---
 
-# Título
-
-## Descripción
+# Descripción de la tarea
 
 Texto
 
-### Referencias o links
+### Referencias
