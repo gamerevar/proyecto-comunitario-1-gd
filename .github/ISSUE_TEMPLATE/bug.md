@@ -2,7 +2,7 @@
 name: Bug
 about: Reportar un bug
 title: Título [BUG]
-labels: bug (menor)
+labels: bug
 assignees: ''
 
 ---
