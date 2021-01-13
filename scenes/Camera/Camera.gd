@@ -18,11 +18,11 @@ export(CameraState) var current_state
 onready var tween := $Tween
 
 
-func _ready():
+func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED) # Mouse is visible and can't go out screen
 
 
-func _process(delta):
+func _process(delta) -> void:
 	if current_state != CameraState.ANCHOR:
 		var direction := _get_keyboard_direction()
 		if direction.is_equal_approx(Vector2.ZERO):
@@ -30,7 +30,7 @@ func _process(delta):
 		position +=  direction * speed * delta
 
 
-func set_anchor(target_node:Node2D):
+func set_anchor(target_node:Node2D) -> void:
 	var anchor: Vector2 = get_parent().to_local(target_node.global_position)
 	current_state = CameraState.ANCHOR
 	var anchor_distance := position.distance_to(anchor)
@@ -70,6 +70,6 @@ func _get_cursor_direction() -> Vector2:
 		cursor_direction.y += 1 #DOWN
 	return cursor_direction.normalized()
 
-func _on_anchor_reached(object, key):
+func _on_anchor_reached(object, key) -> void:
 	emit_signal("anchor_reached")
 	current_state = CameraState.MOUSE_WASD
