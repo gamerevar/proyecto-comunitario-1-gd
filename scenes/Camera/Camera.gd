@@ -10,9 +10,9 @@ enum CameraState {
 }
 
 #exported variables
-export(float, 0, 1) var tolerance: float = 0.5 #workaround for multi monitor
-export(float, 0, 1000) var speed: float = 500
-export(CameraState) var current_state
+export(float, 0, 1) var tolerance := 1.0 #workaround for multi monitor
+export(float, 0, 1000) var speed := 500.0
+export(CameraState) var current_state : int = CameraState.MOUSE_WASD
 
 #onready variables
 onready var tween := $Tween
