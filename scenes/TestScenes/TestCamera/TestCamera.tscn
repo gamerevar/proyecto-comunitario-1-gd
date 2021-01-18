@@ -2,7 +2,8 @@
 
 [ext_resource path="res://scenes/Camera/Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Camera/TestCamera.gd" type="Script" id=3]
+[ext_resource path="res://scenes/TestScenes/TestCamera/TestCamera.gd" type="Script" id=3]
+
 
 [node name="TestCamera" type="Node2D"]
 script = ExtResource( 3 )
