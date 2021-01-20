@@ -1,42 +1,39 @@
 class_name Unit
 extends Area2D
 
-#Stats
-export var speed: int 
-export var health: int 
-export var atack_range: int 
-export var min_damage: int 
-export var max_damage: int 
+export var movement_range : int = 4
+export var atack_range : int
+export var hit_points : int
+export var damage_min : int
+export var damage_max : int
 
-#Experimental location
-onready var way : PoolVector2Array
+var speed := 100.0
+var selected := false
+var action_points := 2
 
-func _move(coords: PoolVector2Array, delta) -> void:
-		# Calculate the movement distance for this frame
-	var distance_to_walk = speed * delta
-	
-	# Move the player along the path until he has run out of movement or the path ends.
-	while distance_to_walk > 0 and coords.size() > 0:
-		var distance_to_next_point = position.distance_to(coords[0])
-		if distance_to_walk <= distance_to_next_point:
-			# The player does not have enough movement left to get to the next point.
-			position += position.direction_to(coords[0]) * distance_to_walk
-		else:
-			# The player get to the next point
-			position = coords[0]
-			coords.remove(0)
-		distance_to_walk -= distance_to_next_point
+onready var soldier_sprite := $Sprite
+onready var movement_tween := $"Tween"
 
-func _ready() -> void:
-	pass
-
-func _process(delta) -> void:
-	_move(way, delta)
-
-#functions for testing Cursors.
-func select():
-	$Sprite.modulate = Color(0.972549, 0.105882, 0.105882)
-
-func _update_way(path : PoolVector2Array):
+func move(path)-> void:
+	path.remove(0)
 	for point in path:
-		way.append(point)
+		var time := position.distance_to(point) / speed
+		movement_tween.interpolate_property($".", "global_position", position, point, time, Tween.TRANS_LINEAR)
+		movement_tween.start()
+		yield(movement_tween,"tween_all_completed")
+
+func select()-> void:
+	selected = true
+	soldier_sprite.modulate = Color(0.972549, 0.105882, 0.105882)
+
+func unselect()-> void:
+	selected = false
+	soldier_sprite.modulate = Color(1, 1, 1)
+
+func _on_Player_mouse_entered()-> void:
+	if not selected:
+		soldier_sprite.modulate = Color(0.545098, 0.968627, 0.376471)
+
+func _on_Player_mouse_exited()-> void:
+	if not selected:
+		soldier_sprite.modulate = Color(1, 1, 1)

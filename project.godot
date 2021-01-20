@@ -10,17 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
-"class": "TestPlayer",
-"language": "GDScript",
-"path": "res://scenes/TestScenes/CursorTest/TESTplayer.gd"
-}, {
-"base": "Area2D",
 "class": "Unit",
 "language": "GDScript",
 "path": "res://scenes/Unit/Unit.gd"
 } ]
 _global_script_class_icons={
-"TestPlayer": "",
 "Unit": ""
 }
 
