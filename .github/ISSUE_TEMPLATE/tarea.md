@@ -1,15 +1,10 @@
 ---
 name: Tarea
-about: Sugerí una tarea nueva para un área determinada. No olvides utilizar la label
-  correcta!
-title: Nueva tarea [Tarea]
-labels: pendiente-codecks
+about: Crear una tarea nueva para un área determinada.
+title: Nueva tarea!
+labels: task
 assignees: ''
 
 ---
 
-# Descripción de la tarea
-
-Texto
-
-### Referencias
+Describí la tarea y no olvides asignarle los _labels_ correspondientes!
