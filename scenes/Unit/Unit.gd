@@ -30,6 +30,12 @@ func move(path)-> void:
 func select()-> void:
 	selected = true
 	soldier_sprite.modulate = Color(0.972549, 0.105882, 0.105882)
+	# Codigo de testeo para probar la rotacion de turnos con el TurnController
+	# Borrar cuando se mergee el branch
+	yield(get_tree().create_timer(1.0), "timeout")
+	action_points -= 1
+	unselect()
+	emit_signal("end_of_action")
 
 func unselect()-> void:
 	selected = false
