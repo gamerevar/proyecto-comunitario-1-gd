@@ -1,6 +1,11 @@
 class_name Unit
 extends Area2D
 
+
+signal end_of_action
+signal death(unit)
+
+
 export var movement_range : int = 4
 export var atack_range : int
 export var hit_points : int
@@ -29,6 +34,9 @@ func select()-> void:
 func unselect()-> void:
 	selected = false
 	soldier_sprite.modulate = Color(1, 1, 1)
+
+func refill_action_points() -> void:
+	action_points = 2
 
 func _on_Player_mouse_entered()-> void:
 	if not selected:
