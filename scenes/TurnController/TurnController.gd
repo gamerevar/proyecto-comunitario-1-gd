@@ -20,7 +20,7 @@ func _ready() -> void:
 		Queue.ENEMIES: _get_enemies(),
 	}
 	_current_queue = Queue.SOLDIERS
-	_current_unit_index = 0
+	_current_unit_index = -1
 	
 	for queue in _unit_queues:
 		for unit in _unit_queues[queue]:
@@ -37,15 +37,15 @@ func select_next_unit() -> void:
 
 
 func _get_next_unit() -> Unit:
-	var unit_index: int = _current_unit_index
+	var unit_index: int = _get_next_unit_index(_current_unit_index)
 	
 	while _unit_queues[_current_queue][unit_index].action_points == 0:
 		unit_index = _get_next_unit_index(unit_index)
 		if unit_index == _current_unit_index:
 			return _get_first_unit_in_next_queue()
-	_current_unit_index = _get_next_unit_index(unit_index)
+	_current_unit_index = unit_index
 	
-	return _unit_queues[_current_queue][unit_index]
+	return _unit_queues[_current_queue][_current_unit_index]
 
 
 func _get_next_unit_index(unit_index: int) -> int:
@@ -64,7 +64,7 @@ func _move_to_next_queue() -> void:
 		_current_queue = Queue.ENEMIES
 	else:
 		_current_queue = Queue.SOLDIERS
-	_current_unit_index = 0
+	_current_unit_index = -1
 
 
 func _refill_action_points_in_queue(queue: int) -> void:
